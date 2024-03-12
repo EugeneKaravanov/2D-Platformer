@@ -8,7 +8,7 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private float _delay;
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0;  i < transform.childCount; i++)
         {

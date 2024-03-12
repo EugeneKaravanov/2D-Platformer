@@ -13,7 +13,7 @@ public class RobberMover : MonoBehaviour
     private int _decimalNumbers = 3;
     private Vector2 _currentPointPosition;
 
-    private void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
