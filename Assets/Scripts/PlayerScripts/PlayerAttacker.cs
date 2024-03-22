@@ -12,7 +12,7 @@ public class PlayerAttacker : Attacker
 
         if (enemy)
         {
-            enemy.transform.GetComponent<Heath>().ChangeHeathValue(-Damage);
+            enemy.transform.GetComponent<Heath>().TakeDamage(Damage);
         }
     }
 }

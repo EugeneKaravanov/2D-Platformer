@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Heath))]
-[RequireComponent(typeof(Pause))]
-[RequireComponent(typeof(RobberPatroller))]
-[RequireComponent(typeof(RobberPursuer))]
-[RequireComponent(typeof(RobberAttacker))]
-[RequireComponent(typeof(AttackView))]
+[RequireComponent(typeof(Heath), typeof(Pause), typeof(RobberPatroller))]
+[RequireComponent(typeof(RobberPursuer), typeof(RobberAttacker), typeof(AttackView))]
 public class RobberAI : MonoBehaviour
 {
-    const string PursuitArea = nameof(PursuitArea);
-    const string AttackArea = nameof(AttackArea);
+    private const string PursuitArea = nameof(PursuitArea);
+    private const string AttackArea = nameof(AttackArea);
 
     private Heath _heath;
     private Pause _pause;
@@ -41,7 +35,7 @@ public class RobberAI : MonoBehaviour
             if (_enemyAttackArea != null && _enemyAttackArea.Player != null)
             {
                 _robberAttacker.Attack(_enemyAttackArea.Player);
-                _attackView.SetAttackView();
+                _attackView.ActivateAttackView();
 
             }
             else if (_enemyPursuitArea != null && _enemyPursuitArea.Player != null)

@@ -15,7 +15,6 @@ public class RobberPatroller : RobberMover
     public void Patrol()
     {
         TrySetNewWayPoint();
-        _currentPointPosition.y = transform.position.y;
         transform.position = Vector2.MoveTowards(transform.position, _currentPointPosition, Speed * Time.deltaTime);
         Rotate();
     }
@@ -24,8 +23,9 @@ public class RobberPatroller : RobberMover
     {
         if (Math.Round(transform.position.x, _decimalNumbers) == Math.Round(_waypoints[_currentWaypointNumber].position.x, _decimalNumbers))
         {
-            _currentWaypointNumber = (_currentWaypointNumber + 1) % _waypoints.Count;
+            _currentWaypointNumber = ++_currentWaypointNumber % _waypoints.Count;
             _currentPointPosition = _waypoints[_currentWaypointNumber].position;
+            _currentPointPosition.y = transform.position.y;
         }
     }
 

@@ -15,11 +15,14 @@ public class ItemSpawner : MonoBehaviour
         {
             _spawnPoints.Add(transform.GetChild(i));
         }
-
-        StartCoroutine(SpawnCoins(_delay));
     }
 
-    private IEnumerator SpawnCoins(float _delay)
+    private void Start()
+    {
+        StartCoroutine(SpawnItems(_delay));
+    }
+
+    private IEnumerator SpawnItems(float _delay)
     {
         var wait = new WaitForSeconds(_delay);
 

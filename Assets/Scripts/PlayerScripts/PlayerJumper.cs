@@ -16,7 +16,9 @@ public class PlayerJumper : MonoBehaviour
     public void TryJump()
     {
         if (IsStayOnGround())
+        {
             _rigidbody.velocity = new Vector3(0, _jumpSpeed);
+        }
     }
 
     private bool IsStayOnGround()

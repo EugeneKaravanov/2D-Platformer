@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Pause))]
+[RequireComponent(typeof(Animator), typeof(Pause))]
 public class AttackView : MonoBehaviour
 {
     private const string IsAttacking = nameof(IsAttacking);
@@ -17,7 +16,7 @@ public class AttackView : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void SetAttackView()
+    public void ActivateAttackView()
     {
         _animator.SetTrigger(IsAttacking);
         StartCoroutine(_pause.SetPause(_attackAnimation.length));   

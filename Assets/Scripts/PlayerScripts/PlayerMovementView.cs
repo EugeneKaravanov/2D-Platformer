@@ -13,7 +13,7 @@ public class PlayerMovementView : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void SetView(float direction)
+    public void SetSpeedInAnimator(float direction)
     {
         _animator.SetFloat(Speed, Math.Abs(direction));
     }

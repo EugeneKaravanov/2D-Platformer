@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(float direction)
     {
-        transform.Translate(new Vector2(_speed * Math.Abs(direction), 0) * Time.deltaTime);
+        transform.Translate(new Vector2(Math.Abs(direction), 0) * _speed * Time.deltaTime);
         Rotate(direction);
     }
 
