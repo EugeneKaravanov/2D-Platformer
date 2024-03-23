@@ -3,8 +3,7 @@ using UnityEngine;
 public class PlayerAttacker : Attacker
 {
     [SerializeField] private LayerMask _enemyMask;
-
-    private float range = 5;
+    [SerializeField] private float range;
 
     public void TryAttack()
     {
@@ -12,7 +11,8 @@ public class PlayerAttacker : Attacker
 
         if (enemy)
         {
-            enemy.transform.GetComponent<Heath>().TakeDamage(Damage);
+            if (enemy.transform.TryGetComponent(out Heath heath))
+                heath.TakeDamage(Damage);
         }
     }
 }
