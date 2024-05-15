@@ -1,7 +1,7 @@
 # 2D Платформер  
   
 
-![Movie_013](https://github.com/EugeneKaravanov/2D-Platformer/assets/94747745/709db6c8-149f-4d45-9843-3b990479ab2e)
+![Uploading Movie_015.gif…]()
   
 
 ## О проекте  
